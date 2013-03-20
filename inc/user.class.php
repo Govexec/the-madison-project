@@ -9,8 +9,8 @@
 
 class User extends Object {
 	
-	protected $salt = 'hoba';
-	
+	protected $salt = 'gegovexec';	
+
 	var $loggedin    = false;
 	var $approved	 = false;
 	var $user_level	 = 3;
@@ -63,18 +63,18 @@ class User extends Object {
 			$this->meta['_account_hash'] = md5($this->salt.$this->post['email'].$this->salt);
 			$this->db->insert(DB_TBL_USER_META, array('user'=>$this->id, 'meta_key'=>'_account_hash', 'meta_value'=>$this->meta['_account_hash']));
 			
-			if($this->post['company'] !== '') // If Company Delay Account Activation
-			{
-				$this->db->insert(DB_TBL_USER_META, array('user'=>$this->id,'meta_key'=>'company_approved','meta_value'=>'0'));
-				$this->success = 'Account Created Successfully!<br>
-								  You\'ve created an Organization Account but it is not yet activated.  Once we verify your organization you will receive an email notification'; 
-			}
-			else
-			{
+			//if($this->post['company'] !== '') // If Company Delay Account Activation
+			//{
+			//	$this->db->insert(DB_TBL_USER_META, array('user'=>$this->id,'meta_key'=>'company_approved','meta_value'=>'0'));
+			//	$this->success = 'Account Created Successfully!<br>
+			//					  You\'ve created an Organization Account but it is not yet activated.  Once we verify your organization you will receive an email notification'; 
+			//}
+			//else
+			//{
 				//$this->login($this->post['email'], $this->post['password']); // If Not Company Auto-Login
 				$this->success = 'Account Created Successfully!<br>
 								  You\'ll recieve an email soon to confirm your address and activate your account.';
-			}
+			//}
 
 			return parent::respond();
 		}

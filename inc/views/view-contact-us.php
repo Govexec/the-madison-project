@@ -6,6 +6,7 @@
  *	@license http://www.gnu.org/licenses/ GNU GPL v.3
  */
 ?>
+<a style="display:block;margin-bottom:10px;" href="/">Home</a>
 <h1>How are we doing?</h1>
 <div id="generic-content">
 <?php if(isset($response) && $response['type'] == 'error') : ?>

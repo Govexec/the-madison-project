@@ -6,7 +6,7 @@
  *	@license http://www.gnu.org/licenses/ GNU GPL v.3
  */
 ?>
-<style>#content{overflow:visible; height:600px;}</style>
+<style>#content{overflow:visible; /*height:600px;*/}</style>
 <script type="text/javascript">
 
 	bill_id	 = <?=$b->id?>;
@@ -123,6 +123,7 @@
         </h3>
         <div id="comments"></div>
     </div>
+    <?php /*
     <div id="keep_updated">
       <span>Keep me updated!</span>
       <form action="" method="post">
@@ -135,6 +136,8 @@
     <div id="update_success" style="display:none;">
       Subscription Successful
     </div>
+    */ ?>
+
     <script type="text/javascript">
       function subscribe(){
         var bill = $("input[name=bill]").val();

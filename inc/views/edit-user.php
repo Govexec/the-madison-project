@@ -11,6 +11,8 @@
 <style>.org_info{display:none}</style>
 <?php endif; ?>
 <script type="text/javascript" src="<?=SERVER_URL?>/assets/js/edit_user.js"></script>
+
+<a href="/" style="display:block;margin-bottom:10px;">Home</a>
 <h1><?=$create ? 'Create an Account' : 'Edit Your Profile'?></h1>
 <div id="generic-content">
 <?php if(isset($response) && $response['type'] == 'error') : ?>
@@ -45,7 +47,7 @@
     <tr>
       <td colspan="2">
       	<h1 style="margin:20px 0 5px 0;"><?=$create ? 'Is this an Organization / Company Account?' : 'Orginization'?></h1>
-        <div class="label-description">Organization accounts must be approved to be activated to prevent fraud.</div>
+        <!--<div class="label-description">Organization accounts must be approved to be activated to prevent fraud.</div>-->
       </td>
     </tr>
     <?php if($create) : ?>

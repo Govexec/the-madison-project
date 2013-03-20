@@ -98,8 +98,8 @@
 
 		//$email = new Mail_Postmark();
 		$headers = 'MIME-Version: 1.0' . "\r\n";
-		$headers = 'Content-type: text/html;' . "\r\n";
-		$headers = 'From: The Madison Project' . "\r\n";
+		$headers .= 'Content-type: text/html;' . "\r\n";
+		$headers .= 'From: legislation@nextgov.com';// . "\r\n";
 		
 		try 
 		{
@@ -144,7 +144,7 @@
 	*/
 	function get_site_title() {
 		//TODO: retrieve from the database 
-		return "Madison";
+		return "FITARA - Legislation Feedback - Nextgov";
 	}
 	
 	/**
@@ -153,7 +153,7 @@
 	*	TODO: allow descriptions for individual pages
 	*/
 	function get_description(){
-		return "Generic site description";
+		return "In mid-March, after months of discussion with technology industry leaders and federal officials, Rep. Darrell Issa, R-Calif., introduced an updated draft of legislation that would reboot the way agencies purchase IT products and services. To comment on this bill or suggest further revisions, log into Madison, a software tool supported by Issa's staff to foster transparency in how legislation is crafted.";
 	}
 	
 	
@@ -176,7 +176,7 @@
         	<meta property="og:title" content="<?php site_title(); ?>" />
         	<meta property="og:description" content="<?php echo get_description(); ?>" />
         	<meta property="og:type" content="website"/>
-        	<meta property="og:url" content="<?=urlencode(SERVER_URL)?>"/>
+        	<meta property="og:url" content="<?=SERVER_URL?>"/>
         	<meta property="og:image" content="<?=SERVER_URL?>/assets/i/fb_meta.jpg"/>
 			<meta property="og:site_name" content=""/>		    
         	<title><?php site_title(); ?></title>
@@ -324,11 +324,15 @@
         	<div id="wrap">
         		<div id="content-wrapper">
             		<div id="content" <?php if($_GET['type'] == 'admin'){ echo "class='admin'"; } ?>>
+				<a href="http://www.nextgov.com" class="logo-wrap" target="_blank">
+					<img src="/assets/i/logo.png" width="221" height="101" alt="Nextgov" id="nextgov_logo">
+				</a>
 <?php } 
 
 	/* DISPLAY FOOTER HTML
 	=====================================================================*/
 	function get_footer() { ?>
+				<div class="clearfix"></div>
         			</div><!-- END CONTENT -->
         		</div><!-- END CONTENT WRAPPER -->
       		</div><!-- END WRAP -->

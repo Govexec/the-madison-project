@@ -167,23 +167,23 @@
 				{
 					$response = $u->create();
 
-					if($response['type'] == 'success' && $_POST['company'] == '')
+					if($response['type'] == 'success') // && $_POST['company'] == '')
 					{
 						$message = '<h3>Thank you for creating a ' . SITE_TITLE . ' Account</h3><br>
 									<a href="'.SERVER_URL.'/login?activate='.$u->meta['_account_hash'].'">Click Here to Activate Your Account.</a>';
 						email($u->post['email'], SITE_TITLE . ' Confirmation', $message);
 					}
-					elseif($response['type'] == 'success' && $_POST['company'] != '')
-					{
-						$message = '<h3>'.$u->post['company'].' Has Requested a ' . SITE_TITLE . ' Account</h3><br>
-									<div>Name: '.$u->post['fname'].' '.$u->post['fname'].'</div>
-                                    <div>Email: '.$u->post['email'].'</div>
-                                    <div>Phone: '.$u->post['phone'].'</div>
-                                    <div>Position: '.$u->post['position'].'</div>
-                                    <div>URL: '.$u->post['url'].'</div><br />
-									<a href="'.SERVER_URL.'/company-approval">Click Here to Approve This Account.</a>';
-						email('your_email', 'An Organization Has Signed Up on ' . SITE_TITLE, $message);
-					}
+					//elseif($response['type'] == 'success' && $_POST['company'] != '')
+					//{
+					//	$message = '<h3>'.$u->post['company'].' Has Requested a ' . SITE_TITLE . ' Account</h3><br>
+					//				<div>Name: '.$u->post['fname'].' '.$u->post['fname'].'</div>
+                                    //<div>Email: '.$u->post['email'].'</div>
+                                    //<div>Phone: '.$u->post['phone'].'</div>
+                                    //<div>Position: '.$u->post['position'].'</div>
+                                    //<div>URL: '.$u->post['url'].'</div><br />
+					//				<a href="'.SERVER_URL.'/company-approval">Click Here to Approve This Account.</a>';
+					//	email('bscott@govexec.com', 'An Organization Has Signed Up on ' . SITE_TITLE, $message);
+					//}
 				}
 				break;
 			

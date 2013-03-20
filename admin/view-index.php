@@ -6,6 +6,8 @@
  *	@license http://www.gnu.org/licenses/ GNU GPL v.3
  */
 ?>
+
+<a style="display:block;margin-bottom:10px;" href="/">Home</a>
 <h1>Administrative Index</h1>
 <ul>
 	<!--<li><a href="/admin/info">Site Info</a></li>-->
